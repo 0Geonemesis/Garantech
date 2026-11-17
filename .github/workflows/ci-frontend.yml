@@ -1,0 +1,28 @@
+name: CI GaranTech - Build Angular
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-frontend:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Clonar el repositorio
+      uses: actions/checkout@v4
+
+    - name: Configurar Node.js 20
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Instalar dependencias de Angular
+      working-directory: ./frontend
+      run: npm install
+
+    - name: Compilar el proyecto Angular (Build)
+      working-directory: ./frontend
+      run: npm run build
