@@ -26,7 +26,7 @@ jobs:
 
     - name: Compilar Angular para producción
       working-directory: ./frontend
-      run: npm run build -- --base-href=/PRUEVA/
+      run: npm run build -- --base-href=/Garantech/
 
     - name: Desplegar en GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
